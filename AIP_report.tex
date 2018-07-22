@@ -15,15 +15,43 @@
   \maketitle % タイトルを出力
 
 \section*{課題2}
-  式を以下のように置く。
+  式と番号を以下のように置きなおす。
 
   \begin{align}
     \xia &= \begin{pmatrix}\xa^2 & 2\xa\ya & \ya^2 & 2f_0\ya & f_0^2\end{pmatrix}^\top \\
-    \bm{u} &= \begin{pmatrix}A & B & C & D & E & F\end{pmatrix}^\top
+    \bm{u} &= \begin{pmatrix}A & B & C & D & E & F\end{pmatrix}^\top \\
+    \bm{M} &= \sum_{\alpha = 1}^N \xia \xia^\top \label{eq:M}
   \end{align}
 
   \subsection*{2-1}
 
-  全ての$\xia$が誤差を含まないとすると、
-  
+  全ての$\xia$が誤差を含まないとすると、全ての$\xia$について下式が成り立つ。
+
+  \begin{equation}
+    (\bm{u}, \xia) = 0
+  \end{equation}
+
+  ここから単純に考えると、誤差を含むような$\xia$に関しては、下式の$(\bm{u}, \xia)$の2乗和$J_{LS}$が最小となるような$\bm{u}$がパラメータとして最もらしいと言える。
+
+  \begin{equation}
+    J_{LS} = \sum_{\alpha = 1}^N (\bm{u}, \xia)^2
+  \end{equation}
+
+  最小二乗法は、この考えに基づき、$J_{LS}$を目的関数として最小化することで、$\bm{u}$を推測する手法である。\par
+  ここで、この式を展開・整理すると下式となる。
+
+  \begin{align}
+    \sum_{\alpha = 1}^N (\bm{u}, \xia)^2 &= \sum_{\alpha = 1}^N (\xia, \bm{u})^2 \nonumber \\
+     &= \sum_{\alpha = 1}^N \xia^\top \bm{u} \xia^\top \bm{u} \nonumber \\
+     &= \sum_{\alpha = 1}^N \bm{u}^\top \xia \xia^\top \bm{u} \nonumber \\
+     &= \bm{u}^\top \left(\sum_{\alpha = 1}^N \xia \xia^\top \right) \bm{u} \label{eq:organized}
+  \end{align}
+
+  式(\ref{eq:organized})を式(\ref{eq:M})を用いて置きなおすことで、$J_{LS}$は以下のように書くことができる。
+
+  \begin{equation}
+    J_{LS} = (\bm{u}, \bm{Mu})
+  \end{equation}
+
+  以上のとおり、最小二乗法で楕円のパラメータを推定するときの目的関数$J_{LS}$が示された。
 \end{document}
