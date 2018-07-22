@@ -1,9 +1,29 @@
 \documentclass[12pt,a4j]{jsarticle}
 
+\usepackage{bm}	% ベクトル修飾の太字がキレイに出せる
+\usepackage{mathrsfs}	% 飾文字
+\usepackage{amsmath,amssymb} % 数学系
+
+\newcommand{\xa}{x_\alpha}
+\newcommand{\ya}{y_\alpha}
+\newcommand{\xia}{\bm{\xi}_\alpha}
+
 \title{画像工学特論 レポート}
 \author{163377 宮田木織}
 
 \begin{document}
   \maketitle % タイトルを出力
+
+\section*{課題2}
+  式を以下のように置く。
+
+  \begin{align}
+    \xia &= \begin{pmatrix}\xa^2 & 2\xa\ya & \ya^2 & 2f_0\ya & f_0^2\end{pmatrix}^\top \\
+    \bm{u} &= \begin{pmatrix}A & B & C & D & E & F\end{pmatrix}^\top
+  \end{align}
+
+  \subsection*{2-1}
+
+  全ての$\xia$が誤差を含まないとすると、
   
 \end{document}
