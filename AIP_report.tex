@@ -59,4 +59,26 @@
   \end{equation}
 
   以上のとおり、最小二乗法で楕円のパラメータを推定するときの目的関数$J_{LS}$が示された。
+
+  \subsection*{2-2}
+    \subsubsection*{誤差と共分散行列}
+      $\xa$と$\ya$は、それぞれを真値と誤差の和として以下のように表せる。
+
+      \begin{equation}
+        \xa = \bar{\xa} + \Delta \xa, \quad \ya = \bar{\ya} + \Delta \ya
+      \end{equation}
+
+      これを用いて$\xia$を表すと、以下のようになる。
+      \begin{equation}
+        \xia = \bar{\xia} + \Delta_1\xia + \Delta_2\xia
+      \end{equation}
+      \begin{align}
+        \Delta_1\xia &= \begin{pmatrix}2\xa\Delta\xia & 2\Delta\xa\bar{\ya} + 2\bar{\xa}\Delta\ya & 2\bar{\ya}\Delta\ya & 2f_0\Delta\ya & 2f_0\Delta\ya & 0\end{pmatrix}^\top \\
+        \Delta_2\xia &= \begin{pmatrix}\Delta\xa^2 & 2\Delta\xa\Delta\ya & \Delta\ya^2 & 0 & 0 & 0 \end{pmatrix}^\top
+      \end{align}
+
+      ここで、誤差が確率変数であるとみなし、$\xia$の共分散行列を下式のように定義する。ただし、$\Delta_2\xia$は十分に小さいものとして無視している。
+      \begin{equation}
+        V[\xia] = E[\Delta_1\xia\Delta_1\xia^\top]
+      \end{equation}
 \end{document}
