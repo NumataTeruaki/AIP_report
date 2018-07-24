@@ -124,7 +124,19 @@
       \begin{equation}
         E[\dxa] = E[\dya] = E[\dxa\dya] = 0, \quad E[\dxa^2] = E[\dya^2] = \sigma
       \end{equation}
-      であるため、共分散行列は以下のように書ける。
+      であるため、共分散行列は以下のように書ける。$V_0[\xia]$は、共分散行列から$\sigma^2$を括りだしたもので、正規化共分散行列という。
+
+      \begin{align}
+        V[\xia] &= 4 \begin{pmatrix}
+          \sigma^2\bxa^2 & \sigma^2\bxa\bya & 0 & f_0\sigma^2\bxa & 0 & 0 \\
+          \sigma^2\bxa\bya & \sigma^2(\bya^2 + \bxa^2) & \sigma^2\bxa\bya & f_0\sigma^2\bya & f_0\sigma^2\bxa & 0 \\
+          0 & \sigma^2\bxa\bya & \sigma^2\bya^2 & 0 & f_0\sigma^2\bya & 0 \\
+          f_0\sigma^2\bxa & f_0\sigma^2\bya & 0 & f_0^2\sigma^2 & 0 & 0 \\
+          0 & f_0\sigma^2\bxa & f_0\sigma^2\bya & 0 & f_0^2\sigma^2 & 0 \\
+          0 & 0 & 0 & 0 & 0 & 0 \\
+        \end{pmatrix} \\
+         &= \sigma^2 V_0[\xia] 
+      \end{align}
     
     \subsubsection*{最尤推定}
       楕円とそれぞれの点との距離の総和として、マハラノビス距離を以下のように定義する。
