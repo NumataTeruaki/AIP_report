@@ -90,9 +90,31 @@
         \end{pmatrix}
       \end{align}
 
-      \begin{equation}
-        V[\xia] = E[\Delta_1\xia\Delta_1\xia^\top]
-      \end{equation}
+      \begin{align*}
+        \bm{a} = \begin{pmatrix}
+          \bxa^2\dxa^2 \\ \bxa\dxa^2\bya + \bxa^2\dxa\dya \\
+          \bxa\bya\dxa\dya \\ f_0\bxa\dxa^2 \\
+          f_0\bxa\dxa\dya \\ 0
+        \end{pmatrix}, \quad& \bm{b} = \begin{pmatrix}
+          \bxa\bya\dxa^2 + \bxa^2\dxa\dya \\ \dxa^2\bya^2 + 2\bxa\bya\dxa\dya + \bxa^2\dya^2 \\
+          \bya^2\dxa\dya + \bxa\bya\dya^2 \\ f_0(\dxa^2\bya + \bxa\dxa\dya) \\
+          f_0(\bya\dxa\dya + \bxa\dya^2) \\ 0
+        \end{pmatrix} \\
+        \bm{c} = \begin{pmatrix}
+          \bxa\bya\dxa\dya \\ \bya^2\dxa\dya + \bxa\bya\dya^2 \\
+          \bya^2\dya^2 \\ f_0\bya\dxa\dya \\
+          f_0\bya\dya^2 \\ 0
+        \end{pmatrix} ,\quad& \bm{d} = \begin{pmatrix}
+          f_0\bxa\dxa^2
+        \end{pmatrix} \\
+        \bm{e} = \begin{pmatrix}
+          f_0\bxa\dxa\dya
+        \end{pmatrix} ,\quad& \bm{f} = \begin{pmatrix}
+          0 \\ 0 \\
+          0 \\ 0 \\
+          0 \\ 0
+        \end{pmatrix}
+      \end{align*}
 
       更に、誤差が互いに独立な期待値$0$、標準偏差$\sigma$の正規分布に従うなら、
       \begin{equation}
