@@ -147,6 +147,14 @@
         J = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right)
       \end{equation}
       
-      これを式(\ref{eq:uxia0})を制約条件としてラグランジュ乗数を導入し、最小化する。
-
+      これを式(\ref{eq:uxia0})を制約条件としてラグランジュ乗数を導入し、最小化する。\par
+      ラグランジュ関数は
+      \begin{equation}
+        L = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right) - \sum_{\alpha = 1}^N \lambda_\alpha (\bxia, \bm{u})
+      \end{equation}
+      であり、これを$\lambda_\alpha$と$\bxia$でそれぞれ偏微分すると
+      \begin{equation}
+        \frac{\partial L}{\partial \bxia} = \frac{\partial L}{\partial \lambda_\alpha} = 0
+      \end{equation}
+      となる。
 \end{document}
