@@ -38,7 +38,7 @@
   まず、楕円の性質より、全ての$\bxia$について下式が成り立つ。
 
   \begin{equation}
-    (\bm{u}, \bxia) = 0
+    (\bm{u}, \bxia) = 0 \label{eq:uxia0}
   \end{equation}
 
   ここから単純に考えると、$\xia$に関しては、下式の$(\bm{u}, \xia)$の2乗和$J_{LS}$が最小となるような$\bm{u}$がパラメータとして最もらしいと言える。
@@ -146,5 +146,7 @@
       \begin{equation}
         J = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right)
       \end{equation}
+      
+      これを式(\ref{eq:uxia0})を制約条件としてラグランジュ乗数を導入し、最小化する。
 
 \end{document}
