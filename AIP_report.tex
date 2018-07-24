@@ -25,7 +25,7 @@
   \begin{align}
     \xia &= \begin{pmatrix}\xa^2 & 2\xa\ya & \ya^2 & 2f_0\ya & f_0^2\end{pmatrix}^\top
      & \quad\cdots\text{誤差を含む点データ} \\
-    \bar{\xia} &= \begin{pmatrix}\bar{\xa}^2 & 2\bar{\xa}\bar{\ya} & \bar{\ya}^2 & 2f_0\bar{\ya} & f_0^2\end{pmatrix}^\top
+    \bxia &= \begin{pmatrix}\bxa^2 & 2\bxa\bya & \bya^2 & 2f_0\bya & f_0^2\end{pmatrix}^\top
      & \quad\cdots\text{$\xa$と$\ya$を真値とした$\xia$} \\
     \bm{u} &= \begin{pmatrix}A & B & C & D & E & F\end{pmatrix}^\top
      & \quad\cdots\text{楕円のパラメータ} \\
@@ -35,10 +35,10 @@
 
   \subsection*{2-1}
 
-  全ての$\bar{\xia}$について下式が成り立つ。
+  全ての$\bxia$について下式が成り立つ。
 
   \begin{equation}
-    (\bm{u}, \bar{\xia}) = 0
+    (\bm{u}, \bxia) = 0
   \end{equation}
 
   ここから単純に考えると、$\xia$に関しては、下式の$(\bm{u}, \xia)$の2乗和$J_{LS}$が最小となるような$\bm{u}$がパラメータとして最もらしいと言える。
@@ -70,16 +70,16 @@
       $\xa$と$\ya$は、それぞれを真値と誤差の和として以下のように表せる。
 
       \begin{equation}
-        \xa = \bar{\xa} + \Delta \xa, \quad \ya = \bar{\ya} + \Delta \ya
+        \xa = \bxa + \dxa, \quad \ya = \bya + \dya
       \end{equation}
 
       これを用いて$\xia$を表すと、以下のようになる。
       \begin{equation}
-        \xia = \bar{\xia} + \Delta_1\xia + \Delta_2\xia
+        \xia = \bxia + \Delta_1\xia + \Delta_2\xia
       \end{equation}
       \begin{align}
-        \Delta_1\xia &= \begin{pmatrix}2\xa\Delta\xia & 2\Delta\xa\bar{\ya} + 2\bar{\xa}\Delta\ya & 2\bar{\ya}\Delta\ya & 2f_0\Delta\ya & 2f_0\Delta\ya & 0\end{pmatrix}^\top \\
-        \Delta_2\xia &= \begin{pmatrix}\Delta\xa^2 & 2\Delta\xa\Delta\ya & \Delta\ya^2 & 0 & 0 & 0 \end{pmatrix}^\top
+        \Delta_1\xia &= \begin{pmatrix}2\xa\dxa & 2\dxa\bya + 2\bxa\dya & 2\bya\dya & 2f_0\dxa & 2f_0\dya & 0\end{pmatrix}^\top \\
+        \Delta_2\xia &= \begin{pmatrix}\dxa^2 & 2\dxa\dya & \dya^2 & 0 & 0 & 0 \end{pmatrix}^\top
       \end{align}
 
       ここで、誤差が確率変数であるとみなし、$\xia$の共分散行列を下式のように定義する。ただし、$\Delta_2\xia$は十分に小さいものとして無視している。
@@ -89,14 +89,14 @@
 
       更に、誤差が互いに独立な期待値$0$、標準偏差$\sigma$の正規分布に従うなら、
       \begin{equation}
-        E[\Delta\xa] = E[\Delta\ya] = E[\Delta\xa\Delta\ya] = 0, \quad E[\Delta\xa^2] = E[\Delta\ya^2] = \sigma
+        E[\dxa] = E[\dya] = E[\dxa\dya] = 0, \quad E[\dxa^2] = E[\dya^2] = \sigma
       \end{equation}
       であるため、共分散行列は以下のように書ける。
     
     \subsubsection*{最尤推定}
       楕円とそれぞれの点との距離の総和として、マハラノビス距離を以下のように定義する。
       \begin{equation}
-        J = \sum_{\alpha = 1}^N \left(\xia - \bar{\xia}, \bm{V}_0[\xia]^{-1} (\xia - \bar{\xia}) \right)
+        J = \sum_{\alpha = 1}^N \left(\xia - \bxia, \bm{V}_0[\xia]^{-1} (\xia - \bxia) \right)
       \end{equation}
 
 \end{document}
