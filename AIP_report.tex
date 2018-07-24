@@ -44,11 +44,11 @@
   ここから単純に考えると、$\xia$に関しては、下式の$(\bm{u}, \xia)$の2乗和$J_{LS}$が最小となるような$\bm{u}$がパラメータとして最もらしいと言える。
 
   \begin{equation}
-    J_{LS} = \sum_{\alpha = 1}^N (\bm{u}, \xia)^2
+    J_{LS} = \sum_{\alpha = 1}^N (\bm{u}, \xia)^2 \label{eq:JLS}
   \end{equation}
 
   最小二乗法は、この考えに基づき、$J_{LS}$を目的関数として最小化することで、$\bm{u}$を推測する手法である。\par
-  ここで、この式を展開・整理すると下式となる。
+  ここで、式(\ref{eq:JLS})を展開・整理すると下式となる。
 
   \begin{align}
     \sum_{\alpha = 1}^N (\bm{u}, \xia)^2 &= \sum_{\alpha = 1}^N (\xia, \bm{u})^2 \nonumber \\
