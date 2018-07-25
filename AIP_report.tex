@@ -158,15 +158,15 @@
         J = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right)
       \end{equation}
       
-      これを式(\ref{eq:uxia0})を制約条件としてラグランジュ乗数を導入し、最小化する。\par
-      ラグランジュ関数は
+      これを式(\ref{eq:uxia0})を制約条件としてラグランジュ乗数を導入し、最小化する。
+      ある$\alpha$に対するラグランジュ関数は
       \begin{equation}
-        L = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right) - \sum_{\alpha = 1}^N \lambda_\alpha (\bxia, \bm{u})
+        L_\alpha = \xia - \bxia, V[\xia]^{-1} (\xia - \bxia) - \lambda_\alpha (\bxia, \bm{u})
       \end{equation}
       であり、これを$\lambda_\alpha$と$\bxia$でそれぞれ偏微分すると
       \begin{align}
-        \frac{\partial L}{\partial \bxia} &= -2V[\xia]^-1(\xia - \bxia) - \lambda_\alpha\bm{u} &= 0 \label{eq:partbxia} \\
-        \frac{\partial L}{\partial \lambda_\alpha} &= -(\bxia, \bm{u}) &= 0 \label{eq:partlambda}
+        \frac{\partial L_\alpha}{\partial \bxia} &= -2V[\xia]^-1(\xia - \bxia) - \lambda_\alpha\bm{u} &= 0 \label{eq:partbxia} \\
+        \frac{\partial L_\alpha}{\partial \lambda_\alpha} &= -(\bxia, \bm{u}) &= 0 \label{eq:partlambda}
       \end{align}
       となる。
 
