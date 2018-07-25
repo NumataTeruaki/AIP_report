@@ -186,5 +186,17 @@
       \begin{equation}
         \bxia = \frac{1}{2}\frac{-(\xia, \bm{u})}{(\bm{u}, V[\xia]\bm{u})}V[\xia]\bm{u} + \xia
       \end{equation}
-
+      
+      最後に式(\ref{eq:JML})に代入して
+      \begin{align}
+        J_{ML} &= \sum_{\alpha = 1}^N \left(\frac{1}{2}\frac{(\xia, \bm{u})}{(\bm{u}, V[\xia]\bm{u})}V[\xia]\bm{u}, (\frac{1}{2}\frac{(\xia, \bm{u})}{(\bm{u}, V[\xia]\bm{u})}V^{-1}[\xia]V[\xia]\bm{u} \right) \\
+         &= \sum_{\alpha = 1}^N \left(\frac{1}{2}\frac{(\xia, \bm{u})}{(\bm{u}, V[\xia]\bm{u})} \right)^2 (V[\xia]\bm{u}, \bm{u})\\
+         &= \frac{1}{4}\sum_{\alpha = 1}^N \frac{(\xia, \bm{u})^2}{(\bm{u}, V[\xia]\bm{u})}
+      \end{align}
+      となる。基本的にはこの式を最小化する$\bm{u}$を推定することになるが、最小化においては定数倍を考慮する必要が無いため、正規化共分散行列$V_0[\xia] = \frac{V[\xia]}{4\sigma^2}$として、以下の式を用いることができる。
+      \begin{equation}
+        J_{ML} = \sum_{\alpha = 1}^N \frac{(\bm{u}, \xia)^2}{(\bm{u}, V_0[\xia]\bm{u})}
+      \end{equation}
+      
+      以上のとおり、最尤推定において楕円のパラメータを推定するときの目的関数$J_{ML}$が示された。
 \end{document}
