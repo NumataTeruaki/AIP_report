@@ -174,7 +174,18 @@
       \begin{equation}
         \bxia = \frac{\lambda_a}{2}V[\xia]\bm{u} + \xia \label{eq:fbxia}
       \end{equation}
+      
       これを式(\ref{eq:partlambda})に代入して
-
+      \begin{equation}
+        \left(\frac{\lambda_a}{2}V[\xia]\bm{u} + \xia, \bm{u} \right) = \frac{\lambda_a}{2}V[\xia]\bm{u}^\top\bm{u} + \xia^\top\bm{u} = 0 \label{eq:flambda}
+      \end{equation}
+      となり、$\lambda$について解くと
+      \begin{equation}
+        \lambda_\alpha = \frac{-(\xia, \bm{u})}{(\bm{u}, V[\xia]\bm{u})}
+      \end{equation}
+      となる。これを式(\ref{eq:fbxia})に代入することで、下式の通り$\bxia$と$\lambda_\alpha$を消した式を得られる。
+      \begin{equation}
+        \bxia = \frac{1}{2}\frac{-(\xia, \bm{u})}{(\bm{u}, V[\xia]\bm{u})}V[\xia]\bm{u} + \xia
+      \end{equation}
 
 \end{document}
