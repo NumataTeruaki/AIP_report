@@ -155,13 +155,13 @@
     \subsubsection*{最尤推定}
       ここまでで求めた共分散行列を用い、マハラノビス距離を以下のように定義する。
       \begin{equation}
-        J = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right)
+        J_{ML} = \sum_{\alpha = 1}^N \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia) \right) \label{eq:JML}
       \end{equation}
       
       これを式(\ref{eq:uxia0})を制約条件としてラグランジュ乗数を導入し、最小化する。
       ある$\alpha$に対するラグランジュ関数は
       \begin{equation}
-        L_\alpha = \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia)\right) - \lambda_\alpha (\bxia, \bm{u}) \label{eq:La}
+        L_\alpha = \left(\xia - \bxia, V[\xia]^{-1} (\xia - \bxia)\right) - \lambda_\alpha (\bxia, \bm{u})
       \end{equation}
       であり、これを$\lambda_\alpha$と$\bxia$でそれぞれ偏微分すると
       \begin{align}
